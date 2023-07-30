@@ -1,0 +1,28 @@
+根据给出的三角形3条边a, b, c，计算三角形的周长和面积。
+
+100000
+ 
+0<a,b,c≤100000 
+输入描述：
+一行，三角形3条边（能构成三角形），中间用一个空格隔开。
+输出描述：
+一行，三角形周长和面积（保留两位小数），中间用一个空格隔开，输出具体格式详见输出样例。
+示例1
+输入：
+3 3 3
+复制
+输出：
+circumference=9.00 area=3.90
+
+#include <stdio.h>
+#include <math.h>
+int main() {
+    int a,b,c;
+    float x,y,z;
+    scanf("%d %d %d",&a,&b,&c);
+    x=a+b+c;
+    z=x/2;
+    y=sqrt(z*(z-a)*(z-b)*(z-c));
+    printf("circumference=%.2f area=%.2f",x,y);
+    return 0;
+}
