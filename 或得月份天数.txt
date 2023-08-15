@@ -1,0 +1,55 @@
+KiKi想获得某年某月有多少天，请帮他编程实现。输入年份和月份，计算这一年这个月有多少天。
+输入描述：
+多组输入，一行有两个整数，分别表示年份和月份，用空格分隔。
+输出描述：
+针对每组输入，输出为一行，一个整数，表示这一年这个月有多少天。
+示例1
+输入：
+2008 2
+复制
+输出：
+29
+
+#include <stdio.h>
+int day(int x){
+    switch(x){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:x=31;
+             break;
+        case 2:x=28;
+             break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:x=30;
+             break;
+    }
+    return x;
+}
+int main() {
+    int y,m;
+    while(scanf("%d %d",&y,&m)!=EOF){
+        if(((0==y%4&&0!=y%100)||(0==y%4&&0==y%400))&&2==m) printf("29\n");
+        else printf("%d\n",day(m));
+    }
+    return 0;
+}
+
+#include <stdio.h>
+int day(int x){
+    int arr[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+    return arr[x-1];
+}
+int main() {
+    int y,m;
+    while(scanf("%d %d",&y,&m)!=EOF){
+        if(((0==y%4&&0!=y%100)||(0==y%4&&0==y%400))&&2==m) printf("29\n");
+        else printf("%d\n",day(m));
+    }
+    return 0;
+}
