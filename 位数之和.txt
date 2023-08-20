@@ -1,0 +1,23 @@
+求一个整数的所有数位之和
+输入描述：
+输入一行，包含一个整数。
+输出描述：
+一个整数. int范围内
+示例1
+输入：
+12
+复制
+输出：
+3
+#include <stdio.h>
+
+int main() {
+    int n,m=0;
+    scanf("%d",&n);
+    while(n>0){
+        m=m+n%10;
+        n=n/10;
+    }
+    printf("%d",m);
+    return 0;
+}
